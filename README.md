@@ -6,9 +6,9 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 1: Welcome to the course
 - [x] 2: Creating the project
 - [x] 3: Creating the player
-- [ ] 4: Scripting Movement
-- [ ] 5: Community & Support
-- [ ] 6: Accessing Our Projects
+- [x] 4: Scripting Movement
+- [x] 5: Community & Support
+- [x] 6: Accessing Our Projects
 
 ## Section 2: Movement and Camera Controls
 - [ ] 7: Section Intro: Movement & Camera Controls
