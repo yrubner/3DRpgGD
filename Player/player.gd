@@ -28,10 +28,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := get_movement_direction()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -48,6 +45,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			_look = -event.relative * mouse_sensitivity
 			print(_look)
+
+func get_movement_direction() -> Vector3:
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	var input_vector := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()	
+	var direction := horizontal_pivot.global_transform.basis * input_vector
+	return direction
+	
 
 func frame_camera_rotation() -> void:
 	horizontal_pivot.rotate_y(_look.x)
