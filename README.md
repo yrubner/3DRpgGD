@@ -3,8 +3,8 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 ### Lessons
 
 ## Section 1: Introduction & Setup
-- [ ] 1: Welcome to the course
-- [ ] 2: Creating the project
+- [x] 1: Welcome to the course
+- [x] 2: Creating the project
 - [ ] 3: Creating the player
 - [ ] 4: Scripting Movement
 - [ ] 5: Community & Support
