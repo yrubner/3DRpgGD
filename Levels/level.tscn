@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbrkiojgwno2n"]
+[gd_scene load_steps=5 format=3 uid="uid://cbrkiojgwno2n"]
+
+[ext_resource type="PackedScene" uid="uid://6yl7adio3uth" path="res://Player/player.tscn" id="1_n1o28"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfjg3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,9 +24,9 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y3flv")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(50, 1, 50)
+
+[node name="Player" parent="." instance=ExtResource("1_n1o28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
