@@ -15,7 +15,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 8: The SpringArm3D Node
 - [x] 9: Handling Mouse Motion
 - [x] 10: Handling Complex Rotations
-- [ ] 11: Transform Interpolation
+- [x] 11: Transform Interpolation
 - [ ] 12: Relative Motion
 - [ ] 13: Adding Assets
 
