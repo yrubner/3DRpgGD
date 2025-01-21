@@ -12,7 +12,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 
 ## Section 2: Movement and Camera Controls
 - [x] 7: Section Intro: Movement & Camera Controls
-- [ ] 8: The SpringArm3D Node
+- [x] 8: The SpringArm3D Node
 - [ ] 9: Handling Mouse Motion
 - [ ] 10: Handling Complex Rotations
 - [ ] 11: Transform Interpolation
