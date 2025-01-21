@@ -17,7 +17,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 10: Handling Complex Rotations
 - [x] 11: Transform Interpolation
 - [x] 12: Relative Motion
-- [ ] 13: Adding Assets
+- [x] 13: Adding Assets
 
 ## Section 3: Animating the Player
 - [ ] 14: Section Intro: Animating the Player
