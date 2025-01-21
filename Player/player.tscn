@@ -23,3 +23,7 @@ shape = SubResource("SeparationRayShape3D_j2ufs")
 spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="HorizontalPivot" type="Node3D" parent="."]
+
+[node name="VerticalPivot" type="Node3D" parent="HorizontalPivot"]
