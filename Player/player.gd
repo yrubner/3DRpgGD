@@ -15,6 +15,8 @@ var _look := Vector2.ZERO
 @onready var horizontal_pivot: Node3D = $HorizontalPivot
 @onready var vertical_pivot: Node3D = $HorizontalPivot/VerticalPivot
 @onready var rig_pivot: Node3D = $RigPivot
+@onready var rig: Node3D = $RigPivot/Rig
+
 
 
 func _ready() -> void:
@@ -31,6 +33,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var direction := get_movement_direction()
+	rig.update_animation_tree(direction)
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
