@@ -19,6 +19,8 @@ var _attack_direction := Vector3.ZERO
 @onready var vertical_pivot: Node3D = $HorizontalPivot/VerticalPivot
 @onready var rig_pivot: Node3D = $RigPivot
 @onready var rig: Node3D = $RigPivot/Rig
+@onready var attack_ray_cast: RayCast3D = %AttackRayCast
+
 
 
 
@@ -51,7 +53,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			_look = -event.relative * mouse_sensitivity
-			print(_look)
 	if rig.is_idle():
 		if event.is_action_pressed("click"):
 			slash_attack()
@@ -92,6 +93,7 @@ func slash_attack() -> void:
 	# If player is not giving a direction through Input, set the attack direction to the current positions forward vector
 	if _attack_direction.is_zero_approx():
 		_attack_direction = rig.global_basis * Vector3(0, 0, 1)	 # can't use Vector3.FORWARD here, since character-model is facing in +z direction, default FORWARD is -z
+	attack_ray_cast.clear_exceptions()
 
 func handle_idle_physics_frame(direction: Vector3, delta: float) -> void:
 	if not rig.is_idle():
@@ -110,3 +112,4 @@ func handle_slashing_physics_frame(delta: float) -> void:
 	velocity.x = _attack_direction.x * attack_move_speed
 	velocity.z = _attack_direction.z * attack_move_speed
 	look_toward_direction(_attack_direction, delta)
+	attack_ray_cast.deal_damage()

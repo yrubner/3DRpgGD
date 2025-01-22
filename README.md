@@ -30,7 +30,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 21: The BoneAttachment3D Node
 - [x] 22: Attacking Motion
 - [x] 23: Organizing the physics process
-- [ ] 24: Attaching a RayCast3D
+- [x] 24: Attaching a RayCast3D
 
 ## Section 4: Making Enemies
 - [ ] 25: Section Intro: Making Enemies
