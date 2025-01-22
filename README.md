@@ -28,7 +28,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 19: Animating Weights
 - [x] 20: AnimationTree Playback
 - [x] 21: The BoneAttachment3D Node
-- [ ] 22: Attacking Motion
+- [x] 22: Attacking Motion
 - [ ] 23: Organizing the physics process
 - [ ] 24: Attaching a RayCast3D
 

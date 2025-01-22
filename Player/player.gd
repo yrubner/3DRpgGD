@@ -4,13 +4,16 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-#Stores the x/y direction the player is trying to look in
+# Stores the x/y direction the player is trying to look in
 var _look := Vector2.ZERO
+# Stores the direction the player is facing when attacking
+var _attack_direction := Vector3.ZERO
 
 @export var mouse_sensitivity : float = 0.00075
 @export var min_boundary : float = -60
 @export var max_boundary : float = 10
 @export var animation_decay : float = 20.0
+@export var attack_move_speed : float = 3.0
 
 @onready var horizontal_pivot: Node3D = $HorizontalPivot
 @onready var vertical_pivot: Node3D = $HorizontalPivot/VerticalPivot
@@ -41,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	handle_slashing_physics_frame(delta)
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -87,3 +90,14 @@ func look_toward_direction(direction: Vector3, delta: float) -> void:
 
 func slash_attack() -> void:
 	rig.travel("Slash")
+	_attack_direction = get_movement_direction()
+	# If player is not giving a direction through Input, set the attack direction to the current positions forward vector
+	if _attack_direction.is_zero_approx():
+		_attack_direction = rig.global_basis * Vector3(0, 0, 1)	 # can't use Vector3.FORWARD here, since character-model is facing in +z direction, default FORWARD is -z
+
+func handle_slashing_physics_frame(delta: float) -> void:
+	if not rig.is_slashing():
+		return
+	velocity.x = _attack_direction.x * attack_move_speed
+	velocity.z = _attack_direction.z * attack_move_speed
+	look_toward_direction(_attack_direction, delta)
