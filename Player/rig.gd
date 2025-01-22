@@ -5,6 +5,7 @@ var run_weight_target: float = -1.0
 var animation_speed: float = 10.0
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
 func _physics_process(delta: float) -> void:
 	animation_tree[run_path] = move_toward(
@@ -18,3 +19,9 @@ func update_animation_tree(direction: Vector3) -> void:
 		run_weight_target = -1.0
 	else:
 		run_weight_target = 1.0
+
+func travel(animation_name: String) -> void:
+	playback.travel(animation_name)
+
+func is_idle() -> bool:
+	return playback.get_current_node() == "MoveSpace"
