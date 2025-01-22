@@ -20,8 +20,8 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 13: Adding Assets
 
 ## Section 3: Animating the Player
-- [ ] 14: Section Intro: Animating the Player
-- [ ] 15: Adding Rigged Characters
+- [x] 14: Section Intro: Animating the Player
+- [x] 15: Adding Rigged Characters
 - [ ] 16: Interpolating the Rig
 - [ ] 17: Importing Animations
 - [ ] 18: Controlling an AnimationTree

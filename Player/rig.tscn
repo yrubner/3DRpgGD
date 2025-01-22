@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxcbhxkcrs3mq"]
+
+[ext_resource type="PackedScene" uid="uid://dxhjp2gtrvptu" path="res://Assets/Character/CharacterRig.glb" id="1_jcs88"]
+
+[node name="Rig" type="Node3D"]
+
+[node name="CharacterRig" parent="." instance=ExtResource("1_jcs88")]
+
+[node name="Knight_02" parent="CharacterRig/GameRig/Skeleton3D" index="1"]
+visible = false
+
+[node name="Villager_01" parent="CharacterRig/GameRig/Skeleton3D" index="2"]
+visible = false
+
+[node name="Villager_02" parent="CharacterRig/GameRig/Skeleton3D" index="3"]
+visible = false
+
+[editable path="CharacterRig"]
