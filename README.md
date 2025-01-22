@@ -25,7 +25,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 16: Interpolating the Rig
 - [x] 17: Importing Animations
 - [x] 18: Controlling an AnimationTree
-- [ ] 19: Animating Weights
+- [x] 19: Animating Weights
 - [ ] 20: AnimationTree Playback
 - [ ] 21: The BoneAttachment3D Node
 - [ ] 22: Attacking Motion
