@@ -33,8 +33,8 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 24: Attaching a RayCast3D
 
 ## Section 4: Making Enemies
-- [ ] 25: Section Intro: Making Enemies
-- [ ] 26: Enemy Setup
+- [x] 25: Section Intro: Making Enemies
+- [x] 26: Enemy Setup
 - [ ] 27: The HealthComponent
 - [ ] 28: Damaging the HealthComponent
 - [ ] 29: Defeat and the ShapeCast3D
