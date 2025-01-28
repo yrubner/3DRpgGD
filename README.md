@@ -35,7 +35,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 ## Section 4: Making Enemies
 - [x] 25: Section Intro: Making Enemies
 - [x] 26: Enemy Setup
-- [ ] 27: The HealthComponent
+- [x] 27: The HealthComponent
 - [ ] 28: Damaging the HealthComponent
 - [ ] 29: Defeat and the ShapeCast3D
 - [ ] 30: Heavy Attacks
