@@ -21,9 +21,14 @@ func _physics_process(delta: float) -> void:
 func check_for_attacks() -> void:
 	for collider_id in player_detector.get_collision_count():
 		var collider = player_detector.get_collider(collider_id)
-		print(collider)
+		if collider is Player:
+			rig.travel("Overhead")
 
 func _on_health_component_defeat() -> void:
 	rig.travel("Defeat")
 	collision_shape_3d.disabled = true
 	set_physics_process(false)
+
+
+func _on_rig_heavy_attack() -> void:
+	print("Heavy attack signal")

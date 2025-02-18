@@ -1,5 +1,7 @@
 extends Node3D
 
+signal heavy_attack()
+
 var run_path: String = "parameters/MoveSpace/blend_position"
 var run_weight_target: float = -1.0
 var animation_speed: float = 10.0
@@ -40,3 +42,8 @@ func set_active_mesh(active_mesh: MeshInstance3D) -> void:
 	for child in skeleton_3d.get_children():
 		child.visible = false
 	active_mesh.visible = true
+
+
+func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Overhead":
+		heavy_attack.emit()
