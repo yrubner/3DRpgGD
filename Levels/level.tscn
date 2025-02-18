@@ -14,45 +14,32 @@
 [ext_resource type="PackedScene" uid="uid://ddo4a6nnqt2jt" path="res://Assets/NatureKit/glTF/CommonTree_4.gltf" id="12_3r2fb"]
 [ext_resource type="PackedScene" uid="uid://byroq1rpq44f6" path="res://Enemy/enemy.tscn" id="13_01qs3"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfjg3"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_140m5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_lth2c"]
-sky_material = SubResource("ProceduralSkyMaterial_wfjg3")
+[sub_resource type="Sky" id="Sky_o1cn2"]
+sky_material = SubResource("ProceduralSkyMaterial_140m5")
 
-[sub_resource type="Environment" id="Environment_y3flv"]
+[sub_resource type="Environment" id="Environment_rsfu1"]
 background_mode = 2
-sky = SubResource("Sky_lth2c")
+sky = SubResource("Sky_o1cn2")
 tonemap_mode = 2
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-ssil_intensity = 3.0
 glow_enabled = true
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.910012, 0.452111, 1.92523e-07, 1)
-fog_sun_scatter = 0.5
-fog_density = 0.3
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.02
-volumetric_fog_emission_energy = 9.4
-volumetric_fog_anisotropy = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f55h7"]
 albedo_color = Color(0.321569, 0.317647, 0.117647, 1)
 
 [node name="Level" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rsfu1")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0.0018063, 0.497287, 0.867585, -0.499997, 0.751801, -0.429881, 0, 0, 0)
 light_color = Color(1, 0.807169, 0.543691, 1)
 light_energy = 2.0
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_y3flv")
 
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

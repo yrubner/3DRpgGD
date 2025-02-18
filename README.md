@@ -37,7 +37,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 26: Enemy Setup
 - [x] 27: The HealthComponent
 - [x] 28: Damaging the HealthComponent
-- [ ] 29: Defeat and the ShapeCast3D
+- [x] 29: Defeat and the ShapeCast3D
 - [ ] 30: Heavy Attacks
 - [ ] 31: Dealing Damage in an Area
 - [ ] 32: Player Defeat
