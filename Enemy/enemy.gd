@@ -5,7 +5,9 @@ class_name Enemy
 @onready var rig: Node3D = $Rig
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@onready var player_detector: ShapeCast3D = $PlayerDetector
+@onready var player_detector: ShapeCast3D = $Rig/PlayerDetector
+@onready var area_attack: ShapeCast3D = $Rig/AreaAttack
+
 
 
 func _ready() -> void:
@@ -31,4 +33,4 @@ func _on_health_component_defeat() -> void:
 
 
 func _on_rig_heavy_attack() -> void:
-	print("Heavy attack signal")
+	area_attack.deal_damage(20.0)
