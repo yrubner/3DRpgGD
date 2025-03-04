@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yvonvin6qp2m"]
 
-[ext_resource type="Script" path="res://Player/area_attack.gd" id="1_c11jo"]
+[ext_resource type="Script" uid="uid://b3vcea54a3tdc" path="res://Player/area_attack.gd" id="1_c11jo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xhtii"]
 radius = 1.0
