@@ -42,7 +42,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 31: Dealing Damage in an Area
 - [x] 32: Player Defeat
 - [x] 33: Player Heavy Attacks
-- [ ] 34: Adding a Dash
+- [x] 34: Adding a Dash
 - [ ] 35: Dashing Motion
 - [ ] 36: Dashing Physics Frame
 - [ ] 37: Dashing Particles
