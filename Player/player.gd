@@ -3,6 +3,7 @@ class_name Player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const DECAY := 15.0
 
 # Stores the x/y direction the player is trying to look in
 var _look := Vector2.ZERO
@@ -101,15 +102,14 @@ func slash_attack() -> void:
 	attack_ray_cast.clear_exceptions()
 
 func handle_idle_physics_frame(direction: Vector3, delta: float) -> void:
-	if not rig.is_idle():
+	if not rig.is_idle() and not rig.is_dashing():
 		return
+		
+	velocity.x = exponential_decay(velocity.x, direction.x * SPEED, DECAY, delta)
+	velocity.z = exponential_decay(velocity.z, direction.z * SPEED, DECAY, delta)
+	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
 		look_toward_direction(direction, delta)
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 func handle_slashing_physics_frame(delta: float) -> void:
 	if not rig.is_slashing():
@@ -132,3 +132,6 @@ func _on_health_component_defeat() -> void:
 
 func _on_rig_heavy_attack() -> void:
 	area_attack.deal_damage(50.0)
+	
+func exponential_decay(a: float, b: float, decay: float, delta: float) -> float:
+	return b + (a - b) * exp(-decay * delta)
