@@ -45,7 +45,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 - [x] 34: Adding a Dash
 - [x] 35: Dashing Motion
 - [x] 36: Dashing Physics Frame
-- [ ] 37: Dashing Particles
+- [x] 37: Dashing Particles
 - [ ] 38: Fixing Rig Edge Cases
 
 ## Section 5: RPG Stats
