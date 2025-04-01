@@ -2,7 +2,7 @@ This is my personal repository for the 3D RPG from the udemy course "Godot 4: Bu
 
 ### Demo
 
-[!Demo](./demo.gif)
+![](./demo.gif)
 
 ### Lessons
 
