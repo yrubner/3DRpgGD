@@ -1,5 +1,9 @@
 This is my personal repository for the 3D RPG from the udemy course "Godot 4: Build a feature-packed 3D RPG"
 
+### Demo
+
+[!Demo](./demo.gif)
+
 ### Lessons
 
 ## Section 1: Introduction & Setup
